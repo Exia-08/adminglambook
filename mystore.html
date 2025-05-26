@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<link href="img/iconglam.png" rel="icon">
+	<!-- My CSS -->
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/price.css">
+
+	<title>GlamBookAdmin</title>
+</head>
+<body>
+
+
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+			<span class="text">GlamBook</span>
+		</a>
+		<ul class="side-menu top">
+			<li>
+				<a href="home.html">
+					<i class='bx bxs-dashboard' ></i>
+					<span class="text">Home</span>
+				</a>
+			</li>
+			<li class="active">
+				<a href="#">
+					<i class='bx bxs-shopping-bag-alt' ></i>
+					<span class="text">My Store</span>
+				</a>
+			</li>
+			<li>
+				<a href="analytics.html">
+					<i class='bx bxs-doughnut-chart' ></i>
+					<span class="text">Analytics</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bxs-message-dots' ></i>
+					<span class="text">Message</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bxs-group' ></i>
+					<span class="text">Team</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="side-menu">
+			<li>
+				<a href="#">
+					<i class='bx bxs-cog' ></i>
+					<span class="text">Settings</span>
+				</a>
+			</li>
+			<li>
+				<a href="#" class="logout">
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text">Logout</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+
+
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+			<a href="#" class="nav-link">Categories</a>
+			<form action="#">
+				<div class="form-input">
+					<input type="search" placeholder="Search...">
+					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+				</div>
+			</form>
+			<input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label>
+			<a href="#" class="notification">
+				<i class='bx bxs-bell' ></i>
+				<span class="num">8</span>
+			</a>
+			<a href="#" class="profile">
+				<img src="img/people.jpg ">
+			</a>
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					<h1>My Store</h1>
+					<ul class="breadcrumb">
+						<li>
+							<a href="#">Home</a>
+						</li>
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active" href="#">My Store</a>
+						</li>
+					</ul>
+				</div>
+				<a href="#" class="btn-download">
+					<i class='bx bxs-cloud-download' ></i>
+					<span class="text">Download PDF</span>
+				</a>
+			</div>
+
+			<div class="price-modifier">
+        <div class="header-row">
+            <div>Product Name</div>
+            <div>Unit Price</div>
+            <div>Quantity</div>
+            <div>Discount %</div>
+            <div>Total</div>
+        </div>
+        
+        <div class="item">
+            <div class="item-name"><input type="text" class="name-input" value="Hair Cut" onchange="updateItem(this)"></div>
+            <div><input type="number" class="price-input" value="80.00" min="0" step="0.01" onchange="updateItem(this)"></div>
+            <div class="quantity-control">
+                <button class="modify-btn minus" onclick="modifyQuantity(this, -1)">-</button>
+                <input type="number" class="quantity-input" value="1" min="1" onchange="updateItem(this)">
+                <button class="modify-btn plus" onclick="modifyQuantity(this, 1)">+</button>
+            </div>
+            <div><input type="number" class="discount-input" value="0" min="0" max="100" onchange="updateItem(this)"></div>
+            <div class="total-price">$26.86</div>
+        </div>
+        
+        <div class="item">
+            <div class="item-name"><input type="text" class="name-input" value="Hair Color" onchange="updateItem(this)"></div>
+            <div><input type="number" class="price-input" value="1000.00" min="0" step="0.01" onchange="updateItem(this)"></div>
+            <div class="quantity-control">
+                <button class="modify-btn minus" onclick="modifyQuantity(this, -1)">-</button>
+                <input type="number" class="quantity-input" value="1" min="1" onchange="updateItem(this)">
+                <button class="modify-btn plus" onclick="modifyQuantity(this, 1)">+</button>
+            </div>
+            <div><input type="number" class="discount-input" value="5" min="0" max="100" onchange="updateItem(this)"></div>
+            <div class="total-price">$31.68</div>
+        </div>
+        
+        <div class="item">
+            <div class="item-name"><input type="text" class="name-input" value="Hair Treatment" onchange="updateItem(this)"></div>
+            <div><input type="number" class="price-input" value="1200.00" min="0" step="0.01" onchange="updateItem(this)"></div>
+            <div class="quantity-control">
+                <button class="modify-btn minus" onclick="modifyQuantity(this, -1)">-</button>
+                <input type="number" class="quantity-input" value="1" min="1" onchange="updateItem(this)">
+                <button class="modify-btn plus" onclick="modifyQuantity(this, 1)">+</button>
+            </div>
+            <div><input type="number" class="discount-input" value="10" min="0" max="100" onchange="updateItem(this)"></div>
+            <div class="total-price">₱25.38</div>
+        </div>
+        
+        <div class="summary">
+            <div class="action-btns">
+                <button class="btn btn-primary" onclick="addNewItem()">Add Item</button>
+                <button class="btn btn-danger" onclick="removeLastItem()">Remove Item</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+		</main>
+		<!-- MAIN -->
+	</section>
+	<!-- CONTENT -->
+	
+
+	<script src="script.js"></script>
+	<script>
+        // Initialize calculations on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.item').forEach(item => {
+                calculateItemTotal(item);
+            });
+            calculateGrandTotal();
+        });
+
+        function modifyQuantity(button, change) {
+            const input = button.parentElement.querySelector('.quantity-input');
+            let newValue = parseInt(input.value) + change;
+            if (newValue < 1) newValue = 1;
+            input.value = newValue;
+            updateItem(input);
+        }
+
+        function updateItem(input) {
+            const item = input.closest('.item');
+            calculateItemTotal(item);
+            calculateGrandTotal();
+        }
+
+        function calculateItemTotal(item) {
+            const price = parseFloat(item.querySelector('.price-input').value) || 0;
+            const quantity = parseInt(item.querySelector('.quantity-input').value) || 0;
+            const discount = parseFloat(item.querySelector('.discount-input').value) || 0;
+            
+            // Calculate subtotal
+            let subtotal = price * quantity;
+            
+            // Apply discount
+            if (discount > 0) {
+                subtotal -= subtotal * (discount / 100);
+            }
+            
+            // Apply tax
+            
+            item.querySelector('.total-price').textContent = '₱' + subtotal.toFixed(2);
+        }
+
+        function calculateGrandTotal() {
+            const totals = document.querySelectorAll('.total-price');
+            let grandTotal = 0;
+            
+            totals.forEach(total => {
+                const value = parseFloat(total.textContent.replace('₱', '')) || 0;
+                grandTotal += value;
+            });
+            
+            document.querySelector('.grand-total').textContent = 'Grand Total: ₱' + grandTotal.toFixed(2);
+        }
+
+        function addNewItem() {
+            const itemsContainer = document.querySelector('.price-modifier');
+            const lastItem = document.querySelectorAll('.item');
+            const summary = document.querySelector('.summary');
+            
+            const newItem = document.createElement('div');
+            newItem.className = 'item';
+            newItem.innerHTML = `
+                <div class="item-name"><input type="text" class="name-input" value="New Product" onchange="updateItem(this)"></div>
+                <div><input type="number" class="price-input" value="0.00" min="0" step="0.01" onchange="updateItem(this)"></div>
+                <div class="quantity-control">
+                    <button class="modify-btn minus" onclick="modifyQuantity(this, -1)">-</button>
+                    <input type="number" class="quantity-input" value="1" min="1" onchange="updateItem(this)">
+                    <button class="modify-btn plus" onclick="modifyQuantity(this, 1)">+</button>
+                </div>
+                <div><input type="number" class="discount-input" value="0" min="0" max="100" onchange="updateItem(this)"></div>
+                <div class="total-price">$0.00</div>
+            `;
+            
+            itemsContainer.insertBefore(newItem, summary);
+            updateItem(newItem.querySelector('.price-input'));
+        }
+
+        function removeLastItem() {
+            const items = document.querySelectorAll('.item');
+            if (items.length > 1) { // Keep at least one item
+                items[items.length - 1].remove();
+                calculateGrandTotal();
+            }
+        }
+    </script>
+</body>
+</html>
